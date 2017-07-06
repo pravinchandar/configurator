@@ -149,4 +149,4 @@ def apply_package_resource(pkg_dict):
             continue
         setattr(pkg, action, items)
     map(lambda x: x.install(), pkg.install)
-    map(lambda x: x.uinstall(), pkg.uninstall)
+    map(lambda x: x.uninstall(), pkg.uninstall)

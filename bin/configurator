@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+import argparse
+import sys
+import os
+
+sys.path.insert(0,'../src/')
+
+from configurator import agent
+
+if not os.geteuid() == 0:
+    sys.exit("\nPlease run this script as root user\n")
+
+parser = argparse.ArgumentParser(description='Configurator, a simple system config management tool')
+parser.add_argument('--config', help='Specify the path to the Configurator YAML file', required=True)
+
+cli_args = parser.parse_args()
+agent.configure(cli_args.config)

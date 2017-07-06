@@ -1,0 +1,18 @@
+precise64:
+    package:
+        install:
+            - apache2
+            - php5
+            - libapache2-mod-php5
+            - curl
+    file:
+        /var/www/index.php:
+            mode: '0755'
+            content: "<?php echo '<p>Hello World</p>'; ?>"
+            restart:
+                - apache2
+    command:
+        'rm /var/www/index.html':
+            onlyif: 'test -f /var/www/index.html'
+            restart:
+                - apache2
