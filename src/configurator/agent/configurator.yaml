@@ -1,0 +1,31 @@
+precise64:
+    package:
+        install:
+            - apache2
+            - php5
+            - php-pear
+            - libapache2-mod-php5
+            - curl
+    file:
+        /var/www/index.php:
+            mode: '0755'
+            content: "<?php echo '<p>Hello World</p>'; ?>"
+            restart:
+                - apache2
+        /tmp/foo:
+            owner: root
+            group: root
+            mode: '0644'
+            content: 'foooo'
+        /tmp/bar:
+            owner: foouser
+            group: root
+            mode: '0700'
+            clone: /etc/host.conf
+    command:
+        'rm -rf /tmp/cool_dir':
+            onlyif: 'test -d /tmp/cool_dir'
+        'rm /var/www/index.html':
+            onlyif: 'test -f /var/www/index.html'
+            restart:
+                - apache2
