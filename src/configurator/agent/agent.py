@@ -6,7 +6,6 @@ import os.path
 from configurator.utils.logger import setup_logging
 
 from configurator.resources.file import apply_file_resource
-from configurator.resources.service import apply_service_resource
 from configurator.resources.command import apply_command_resource
 from configurator.resources.package import apply_package_resource
 
