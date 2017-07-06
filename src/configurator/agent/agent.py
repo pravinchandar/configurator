@@ -29,7 +29,6 @@ for host, resource in config.iteritems():
     if 'package' in resource.keys():
         apply_package_resource(config[host]['package'])
     if 'file' in resource.keys():
-        print config[host]['file']
         apply_file_resource(config[host]['file'])
     if 'command' in resource.keys():
         apply_command_resource(config[host]['command'])

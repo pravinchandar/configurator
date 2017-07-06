@@ -29,17 +29,3 @@ class ServiceResource(object):
 
     def status(self):
         pass
-
-def apply_service_resource(service_dict):
-    for service, state in service_dict.iteritems():
-        print state
-
-def build_file_resource(file_dict):
-    for name, metadata in file_dict.iteritems():
-        f = FileResource(name)
-        filtered = {k: v for k, v in metadata.items() if k in f.supported_metadata}
-        for meta, value in filtered.iteritems():
-            setattr(f, meta, value)
-        if f.refreshed:
-            map(lambda x: x.restart(), f.restart)
-
