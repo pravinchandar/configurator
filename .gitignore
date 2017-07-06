@@ -1,0 +1,15 @@
+## generic files to ignore
+*~
+*.lock
+*.swp
+*.swo
+*.vagrant
+
+# Python object files
+*.pyc
+*.pyo
+
+#py test files
+.coverage
+py.junit.*.xml
+**/.cache
