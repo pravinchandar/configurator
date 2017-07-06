@@ -5,6 +5,7 @@ precise64:
             - php5
             - php-pear
             - libapache2-mod-php5
+            - tree
             - curl
     file:
         /var/www/index.php:
