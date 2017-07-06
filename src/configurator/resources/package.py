@@ -6,7 +6,7 @@ configuratior YAML file.
 import platform
 from configurator.utils.logger import setup_logging
 
-logger = setup_logging(logger_name=__name__, level='INFO')
+logger = setup_logging(logger_name=__name__, level='DEBUG')
 
 class PackageManagerException(Exception):
     """

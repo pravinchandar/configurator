@@ -12,7 +12,7 @@ import stat
 from configurator.utils.logger import setup_logging
 from configurator.resources.service import ServiceResource
 
-logger = setup_logging(logger_name=__name__, level='INFO')
+logger = setup_logging(logger_name=__name__, level='DEBUG')
 
 class FileResource(object):
     """
