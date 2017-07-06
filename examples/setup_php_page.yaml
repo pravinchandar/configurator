@@ -6,13 +6,13 @@ precise64:
             - libapache2-mod-php5
             - curl
     file:
-        /var/www/index.php:
+        /var/www/html/index.php:
             mode: '0755'
             content: "<?php echo '<p>Hello World</p>'; ?>"
             restart:
                 - apache2
     command:
-        'rm /var/www/index.html':
-            onlyif: 'test -f /var/www/index.html'
+        'rm /var/www/html/index.html':
+            onlyif: 'test -f /var/www/html/index.html'
             restart:
                 - apache2
