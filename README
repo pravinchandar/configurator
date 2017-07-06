@@ -16,7 +16,7 @@ an easy-to-interpret YAML file.
 
 Installation:
 
-1. git clone configurator.git -b master configurator
+1. unzip configurator.zip
 2. cd configurator
 3. bash -x bootstrap.sh (to install the dependencies)
 
